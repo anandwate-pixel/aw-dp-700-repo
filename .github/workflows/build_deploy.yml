@@ -48,10 +48,8 @@ jobs:
       - name: Authenticate as Service Principal
         run: |
             $SecureStringPwd = ConvertTo-SecureString ${{secrets.AZURE_CLIENT_SECRET}} -AsPlainText -Force
-            $pscredential = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList ${{secrets.AZURE_CLIENT_ID}}, $SecureStringPwd
-                                    
-            Connect-AzAccount -ServicePrincipal -Credential $pscredential -Tenant ${{secrets.AZURE_TENANT_ID}}    
-        
+            $pscredential = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList ${{secrets.AZURE_CLIENT_ID}}, $SecureStringPwd                                    
+            Connect-AzAccount -ServicePrincipal -Credential $pscredential -Tenant ${{secrets.AZURE_TENANT_ID}}        
             $fabricToken = (Get-AzAccessToken -ResourceUrl ${{env.resourceUrl}}).Token
       # Run script to deploy with fabric-cicd to Test
       - name: Run script to deploy with fabric-cicd to Test
