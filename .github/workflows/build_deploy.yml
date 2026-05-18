@@ -54,7 +54,7 @@ jobs:
       - name: Azure Login
         uses: azure/login@v2
         with:
-          creds: ${{secrets.AZURE_CLIENT_SECRET}}
+          creds: ConvertTo-SecureString ${{secrets.AZURE_CLIENT_SECRET}} -AsPlainText -Force
       - name: Get Access Token
         run: |
           # Request a token for a specific scope (e.g., Management API)
