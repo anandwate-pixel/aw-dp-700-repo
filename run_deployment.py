@@ -29,7 +29,7 @@ print(item_type_in_scope)
 
 
 # Authenticate with DefaultAzureCredential authenticated by PowerShell
-# credential = DefaultAzureCredential()
+credential = DefaultAzureCredential()
 
 # Initialize the FabricWorkspace object with the required parameters
 target_workspace = FabricWorkspace(
@@ -37,7 +37,7 @@ target_workspace = FabricWorkspace(
     environment=args.Environment,
     repository_directory=args.RepositoryDirectory,
     item_type_in_scope=item_type_in_scope,
-    token_credential=args.token_credential
+    token_credential=credential
 )
 
 # # # Publish all items defined in item_type_in_scope
