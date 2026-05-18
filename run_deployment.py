@@ -35,7 +35,8 @@ target_workspace = FabricWorkspace(
     workspace_id= args.WorkspaceId,
     environment=args.Environment,
     repository_directory=args.RepositoryDirectory,
-    item_type_in_scope=item_type_in_scope,    
+    item_type_in_scope=item_type_in_scope,
+    token_credential=args.token_credential
 )
 
 # # # Publish all items defined in item_type_in_scope
