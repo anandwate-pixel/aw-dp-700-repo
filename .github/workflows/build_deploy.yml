@@ -47,8 +47,6 @@ jobs:
       # Authenticate as Service Principal
       - name: Authenticate as Service Principal
         run: |
-            Install-Module -Name Az.Accounts -AllowClobber -Force
-      
             $SecureStringPwd = ConvertTo-SecureString ${{secrets.AZURE_CLIENT_SECRET}} -AsPlainText -Force
             $pscredential = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList ${{secrets.AZURE_CLIENT_ID}}, $SecureStringPwd
                                     
