@@ -1,4 +1,4 @@
 find_replace:
     "123e4567-e89b-12d3-a456-426614174000": # lakehouse GUID to be replaced
-        Stage: "f47ac10b-58cc-4372-a567-0e02b2c3d479" # PPE lakehouse GUID
+        Test: "f47ac10b-58cc-4372-a567-0e02b2c3d479" # PPE lakehouse GUID
         Prod: "9b2e5f4c-8d3a-4f1b-9c3e-2d5b6e4a7f8c" # PROD lakehouse GUID
