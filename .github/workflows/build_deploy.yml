@@ -39,6 +39,11 @@ jobs:
         run: |
             python -m pip install --upgrade pip
             pip install fabric-cicd
+      - name: Install Azure Accounts module
+        shell: pwsh
+        run: |
+          Set-PSRepository -Name 'PSGallery' -InstallationPolicy Trusted
+          Install-Module -Name Az.Accounts -AllowClobber -Force -ErrorAction Stop
       # Authenticate as Service Principal
       - name: Authenticate as Service Principal
         run: |
