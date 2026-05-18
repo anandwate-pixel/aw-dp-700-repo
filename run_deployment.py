@@ -8,7 +8,7 @@ Can be expanded to retrieve values from Key Vault or other sources
 # Kevin Chant has extended this!!!
 # START-EXAMPLE
 # import from fabric_cicd and azure.identity to pass-through service principal
-# from azure.identity import DefaultAzureCredential
+from azure.identity import DefaultAzureCredential
 from fabric_cicd import FabricWorkspace, publish_all_items, unpublish_all_orphan_items
 import argparse
 # import os
