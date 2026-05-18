@@ -52,7 +52,7 @@ jobs:
       #       Connect-AzAccount -ServicePrincipal -Credential $pscredential -Tenant ${{secrets.AZURE_TENANT_ID}}        
       #       $fabricToken: (Get-AzAccessToken -ResourceUrl ${{env.resourceUrl}}).Token
       - name: Azure Login
-        uses: azure/login@v2
+        uses: azure/login@v3
         with:
           creds: ${{secrets.AZURE_CREDENTIALS}}
       - name: Get Access Token
