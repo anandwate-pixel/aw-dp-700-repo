@@ -1,5 +1,6 @@
 find_replace:
-     - find_value:"123e4567-e89b-12d3-a456-426614174000": # lakehouse GUID to be replaced
-       replace_value:
-        Test: "f47ac10b-58cc-4372-a567-0e02b2c3d479" # PPE lakehouse GUID
-        Prod: "9b2e5f4c-8d3a-4f1b-9c3e-2d5b6e4a7f8c" # PROD lakehouse GUID
+    - find_value: "51b570f4-61bc-4a54-9281-3b8bc0c23af8" # workspace GUID to be replaced
+      replace_value:
+          TEST: "6e5018f4-9e64-4078-8293-f7b49ded3758" # TEST workspace GUID
+      item_type: "SemanticModel" # filter on notebook files
+      item_name: ["test_certified_sm"] # filter on specific notebook files
