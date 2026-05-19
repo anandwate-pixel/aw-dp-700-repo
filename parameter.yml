@@ -7,4 +7,8 @@ find_replace:
           PPE: "6e5018f4-9e64-4078-8293-f7b49ded3758" # TEST workspace GUID
       item_type: "SemanticModel" # filter on semantic model
       item_name: ["test_certified_sm"] # filter on semantic model name
-
+semantic_model_binding:
+    models:
+        - semantic_model_name: "test_certified_sm"
+          connection_id:
+              PPE: "mquqmq2iatkena5qkinc3lui5y-6qmfa3tetz4ebaut662j33jxla.datawarehouse.fabric.microsoft.com"
