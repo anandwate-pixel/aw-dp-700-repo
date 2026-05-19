@@ -2,8 +2,9 @@ find_replace:
     - find_value: "5ab80750-cf27-4cea-ab2b-eedd93c0cabb" # lakehouse GUID to be replaced
       replace_value:
           PPE: "bf7543b9-73dc-49c9-8ed2-5e1766e06593" # TEST lakehouse GUID
-      item_type: "SemanticModel" # filter on semantic model
-      item_name: ["test_certified_sm"] # filter on semantic model name
     - find_value: "51b570f4-61bc-4a54-9281-3b8bc0c23af8" # workspace GUID to be replaced
       replace_value:
           PPE: "6e5018f4-9e64-4078-8293-f7b49ded3758" # TEST workspace GUID
+      item_type: "SemanticModel" # filter on semantic model
+      item_name: ["test_certified_sm"] # filter on semantic model name
+
