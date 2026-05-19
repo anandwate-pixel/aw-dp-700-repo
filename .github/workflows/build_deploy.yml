@@ -54,4 +54,4 @@ jobs:
             
       # Run script to deploy with fabric-cicd to Test
       - name: Run script to deploy with fabric-cicd to Test
-        run: python run_deployment.py --WorkspaceId ${{vars.STAGEWORKSPACE}} --Environment "" --RepositoryDirectory "." --ItemsInScope  ${{vars.ITEMSINSCOPE}}
+        run: python run_deployment.py --WorkspaceId ${{vars.STAGEWORKSPACE}} --Environment "PPE" --RepositoryDirectory "." --ItemsInScope  ${{vars.ITEMSINSCOPE}}
