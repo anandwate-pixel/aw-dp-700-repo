@@ -19,7 +19,6 @@ parser.add_argument('--WorkspaceId', type=str)
 parser.add_argument('--Environment', type=str)
 parser.add_argument('--RepositoryDirectory', type=str)
 parser.add_argument('--ItemsInScope', type=str)
-parser.add_argument('--token_credential', type=str)
 args = parser.parse_args()
 
 # Convert item_type_in_scope into a list
