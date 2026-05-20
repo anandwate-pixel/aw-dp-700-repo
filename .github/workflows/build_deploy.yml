@@ -46,7 +46,7 @@ jobs:
       - name: Install Tabular Editor
         shell: powershell
         run: |
-          choco install tabulareditor -y
+          choco install tabular-editor -y
 
       # Verify Installation
       - name: Verify Tabular Editor
