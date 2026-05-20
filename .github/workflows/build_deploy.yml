@@ -20,38 +20,47 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
-    runs-on: windows-latest
-    environment: PPE
+    runs-on: self-hosted
+    
+    env: 
+      WORKSPACE: "aw-stage-ws"
+      DATASET: "test_certified_sm"
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Runs a single command using the runners shell
-      - name: Deploy_to_Test
+      - name: checkout repo
         uses: actions/checkout@v4.2.2
+      - name: Deploy Semantic Model
+        run: |
+          TabularEditor.exe definition/model.tmdl ^
+          -D "powerbi://api.powerbi.com/v1.0/myorg/${{ env.WORKSPACE }}" ^
+          "${{ env.DATASET }}" ^
+          -O
 
-      # Use specific version of Python
-      - name: Setup Python
-        uses: actions/setup-python@v5.5.0
-        with:
-         python-version: 3.11
+      # # Use specific version of Python
+      # - name: Setup Python
+      #   uses: actions/setup-python@v5.5.0
+      #   with:
+      #    python-version: 3.11
          
-      # Install fabric-cicd library
-      - name: Install fabric-cicd library
-        run: |
-            python -m pip install --upgrade pip
-            pip install fabric-cicd
-      # Authenticate as Service Principal
-      - name: Authenticate as Service Principal
-        run: |
-            Install-Module -Name Az.Accounts -AllowClobber -Force
+      # # Install fabric-cicd library
+      # - name: Install fabric-cicd library
+      #   run: |
+      #       python -m pip install --upgrade pip
+      #       pip install fabric-cicd
+      # # Authenticate as Service Principal
+      # - name: Authenticate as Service Principal
+      #   run: |
+      #       Install-Module -Name Az.Accounts -AllowClobber -Force
             
-            $SecureStringPwd = ConvertTo-SecureString ${{secrets.AZURE_CLIENT_SECRET}} -AsPlainText -Force
-            $pscredential = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList ${{secrets.AZURE_CLIENT_ID}}, $SecureStringPwd
+      #       $SecureStringPwd = ConvertTo-SecureString ${{secrets.AZURE_CLIENT_SECRET}} -AsPlainText -Force
+      #       $pscredential = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList ${{secrets.AZURE_CLIENT_ID}}, $SecureStringPwd
             
-            Connect-AzAccount -ServicePrincipal -Credential $pscredential -Tenant ${{secrets.AZURE_TENANT_ID}}
+      #       Connect-AzAccount -ServicePrincipal -Credential $pscredential -Tenant ${{secrets.AZURE_TENANT_ID}}
             
-            $fabricToken = (Get-AzAccessToken -ResourceUrl ${{env.resourceUrl}}).Token
+      #       $fabricToken = (Get-AzAccessToken -ResourceUrl ${{env.resourceUrl}}).Token
             
-      # Run script to deploy with fabric-cicd to Test
-      - name: Run script to deploy with fabric-cicd to Test
-        run: python run_deployment.py --WorkspaceId ${{vars.STAGEWORKSPACE}} --Environment "PPE" --RepositoryDirectory "." --ItemsInScope  ${{vars.ITEMSINSCOPE}}
+      # # Run script to deploy with fabric-cicd to Test
+      # - name: Run script to deploy with fabric-cicd to Test
+      #   run: python run_deployment.py --WorkspaceId ${{vars.STAGEWORKSPACE}} --Environment "PPE" --RepositoryDirectory "." --ItemsInScope  ${{vars.ITEMSINSCOPE}}
