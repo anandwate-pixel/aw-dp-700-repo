@@ -52,11 +52,11 @@ jobs:
       - name: Verify Tabular Editor
         shell: powershell
         run: |
-          TabularEditor.exe -?
+          C:\Program Files (x86)\Tabular Editor\TabularEditor.exe -?
           
       - name: Deploy Semantic Model
         run: |
-          TabularEditor.exe definition/model.tmdl ^
+          C:\Program Files (x86)\Tabular Editor\TabularEditor.exe definition/model.tmdl ^
           -D "powerbi://api.powerbi.com/v1.0/myorg/${{ env.WORKSPACE }}" ^
           "${{ env.DATASET }}" ^
           -O
