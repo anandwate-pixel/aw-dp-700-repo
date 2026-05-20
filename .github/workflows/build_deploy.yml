@@ -48,11 +48,11 @@ jobs:
         run: |
           choco install tabular-editor -y
 
-      # Verify Installation
-      - name: Verify Tabular Editor
-        shell: powershell
-        run: |
-          "C:/Program Files/Tabular Editor/TabularEditor.exe" -?
+      # # Verify Installation
+      # - name: Verify Tabular Editor
+      #   shell: powershell
+      #   run: |
+      #     "C:/Program Files/Tabular Editor/TabularEditor.exe" -?
           
       - name: Deploy Semantic Model
         run: |
