@@ -10,7 +10,7 @@ annotation PBI_QueryOrder = ["DirectLake - test_bronze_lakehouse"]
 
 annotation __PBI_TimeIntelligenceEnabled = 1
 
-annotation PBI_ProTooling = ["DirectLakeOnOneLakeInWeb"]
+annotation PBI_ProTooling = ["DirectLakeOnOneLakeInWeb","WebModelingEdit"]
 
-ref table customers
+ref table orders
 

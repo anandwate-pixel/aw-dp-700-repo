@@ -3,7 +3,7 @@ expression 'DirectLake - test_bronze_lakehouse' =
 		    Source = AzureStorage.DataLake("https://onelake.dfs.fabric.microsoft.com/51b570f4-61bc-4a54-9281-3b8bc0c23af8/5ab80750-cf27-4cea-ab2b-eedd93c0cabb", [HierarchicalNavigation=true])
 		in
 		    Source
-	lineageTag: adf68c4b-7d92-42f5-8bb0-b380689611bf
+	lineageTag: f24049d2-1282-4732-ba96-91793a6aa037
 
 	annotation PBI_IncludeFutureArtifacts = False
 
