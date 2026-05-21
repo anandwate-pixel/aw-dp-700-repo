@@ -56,7 +56,7 @@ jobs:
           
       - name: Deploy Semantic Model
         run: |
-          & "C:/ProgramData/Tabular Editor/TabularEditor.exe" definition/model.tmdl -D "powerbi://api.powerbi.com/v1.0/myorg/${{ env.WORKSPACE }}" "${{ env.DATASET }}" -O
+          TabularEditor.exe definition/model.tmdl -D "powerbi://api.powerbi.com/v1.0/myorg/${{ env.WORKSPACE }}" "${{ env.DATASET }}" -O
 
       # # Use specific version of Python
       # - name: Setup Python
