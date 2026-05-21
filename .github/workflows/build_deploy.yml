@@ -47,7 +47,7 @@ jobs:
         shell: powershell
         run: |
           choco install tabular-editor -y
-          Get-Command TabularEditor | Select-Object -ExpandProperty Source
+          Get-Command tabular-editor | Select-Object -ExpandProperty Source
       # # Verify Installation
       # - name: Verify Tabular Editor
       #   shell: powershell
